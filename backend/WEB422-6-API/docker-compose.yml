@@ -1,0 +1,12 @@
+version: '2'
+services:
+  web:
+    build: .
+    command: npm run start
+    volumes:
+      - /usr/app/node_modules
+    networks:
+      - npm-network
+networks:
+  npm-network:
+    external: true

@@ -1,0 +1,14 @@
+version: '2'
+services:
+  web:
+    build: .
+    command: sh -c "npm run build && npm run start"
+    volumes:
+      - /usr/app/node_modules
+    networks:
+      - npm-network
+    expose:
+      - "6881"
+networks:
+  npm-network:
+    external: true
